@@ -7,7 +7,7 @@ abstract class SugarUtility {
   public $param;
 
   public function __construct($params = []) {
-    $this->param = new stdClass();
+    $this->param = new \stdClass();
     foreach ($params as $key => $val) {
       $this->param->{$key} = $val;
     }
