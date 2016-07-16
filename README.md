@@ -84,8 +84,8 @@ ConveySugar is available via Composer
 	* Related::TRANSFORM_BOOL
 * resultFn __(Function)__
 	* Parameters (Assoc Array)
-		* results
-		* offset
+		* results (Array)
+		* offset (Integer)
 * offset __(Integer)__
 * limit __(Integer)__
 
@@ -95,8 +95,8 @@ ConveySugar is available via Composer
 #### Parameters
 * resultFn __(Function) _Required___
 	* Parameters (Assoc Array)
-		* results
-		* offset
+		* results (Array)
+		* offset (Integer)
 * offset __(Integer)__
 * limit __(Integer)__
 
