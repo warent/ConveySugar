@@ -84,7 +84,7 @@ ConveySugar is available via Composer
 * transform __(Related::Transform [static int])__
 	* Related::TRANSFORM_JSON
 	* Related::TRANSFORM_BOOL
-* resultFn __(Function)__
+* resultsFn __(Function)__
 	* Parameters (Assoc Array)
 		* results (Array)
 		* offset (Integer)
@@ -95,7 +95,7 @@ ConveySugar is available via Composer
 #### Description
 	Cycle records of a sugar module
 #### Parameters
-* resultFn __(Function) _Required___
+* resultsFn __(Function) _Required___
 	* Parameters (Assoc Array)
 		* results (Array)
 		* offset (Integer)
@@ -103,8 +103,8 @@ ConveySugar is available via Composer
 * limit __(Integer)__
 
 ## 5. Extra Features
-### resultFn
-* Returning `false` in a resultFn will stop/break the lookup
+### resultsFn
+* Returning `false` in a resultsFn will stop/break the lookup
 
 ### Related (Utility)
 * `transform` will return JSON (Assoc Array) by default. `TYPE_BOOL` will `return true` if any results are found, otherwise `return false`
