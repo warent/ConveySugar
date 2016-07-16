@@ -10,5 +10,10 @@
             "email": "hello@wyatt.ninja"
         }
     ],
+    "autoload": {
+        "psr-0": {
+            "ConveySugar": "./"
+        }
+    },
     "minimum-stability": "dev"
 }
