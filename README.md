@@ -28,7 +28,7 @@ ConveySugar is available via Composer
 			$this->sugar = new Sugar([
 				'SUGAR_URL' => 'https://sugar/rest/v10/',
 				'SUGAR_USERNAME' => 'admin',
-				'SUGAR_PASS' => 'password'
+				'SUGAR_PASSWORD' => 'password'
 			]);
 		}
 
@@ -101,7 +101,7 @@ ConveySugar is available via Composer
 * offset __(Integer)__
 * limit __(Integer)__
 
-## 5. Extra features
+## 5. Extra Features
 ### resultFn
 * Returning `false` in a resultFn will stop/break the lookup
 
