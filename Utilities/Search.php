@@ -31,10 +31,10 @@ class Search extends SugarUtility {
     $continue = true;
 
     if (array_key_exists('records', $results)) {
-      $continue = call_user_func($this->param->apply, $results['records'], $this->param->offset);
+      $continue = call_user_func($this->param->resultsFn, ['results' => $results['records'], $this->param->offset]);
     } else {
       // This means we have a single record
-      $continue = call_user_func($this->param->apply, $results, $this->param->offset);
+      $continue = call_user_func($this->param->resultsFn, ['results' => $results, 'offset' => $this->param->offset]);
       return 0;
     }
 

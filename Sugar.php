@@ -10,7 +10,7 @@ class Sugar {
     $this->sugar = new \Spinegar\Sugar7Wrapper\Rest();
     $this->sugar->setUrl($params['SUGAR_URL'])
       ->setUsername($params['SUGAR_USERNAME'])
-      ->setPassword($params['SUGAR_PASS'])
+      ->setPassword($params['SUGAR_PASSWORD'])
       ->connect();
   }
 

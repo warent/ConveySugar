@@ -36,7 +36,7 @@ ConveySugar is available via Composer
 
 			// Instantiating a new Sugar Utility
 			// This one cycles through all instances of a Sugar module
-			$serchUtil = new Search(['processFn' => function($Results, $offset) {
+			$serchUtil = new Search(['resultsFn' => function($Results, $offset) {
 				echo "Results from $offset";
 				foreach ($Results as $result) {
 					print_r($Result);

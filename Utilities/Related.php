@@ -15,7 +15,7 @@ class Related extends SugarUtility {
     $this->pdefault('number', 1);
     $this->pdefault('type', static::TYPE_NORMAL);
     $this->pdefault('transform', static::TRANSFORM_JSON);
-    $this->pdefault('lookupFn', null);
+    $this->pdefault('resultsFn', null);
     $this->pdefault('offset', 0);
     $this->pdefault('limit', -1);
   }
@@ -30,7 +30,7 @@ class Related extends SugarUtility {
       else if ($this->param->type == static::TYPE_NAKED) $_relation = $this->param->relation;
       else if ($this->param->type == static::TYPE_BACK) $_relation = strtolower($this->param->relation) . "_" . strtolower($module) . "_{$this->param->number}";
 
-      if (is_null($this->param->lookupFn)) {
+      if (is_null($this->param->resultsFn)) {
         $relatedResult = $sugar->related($module, $this->param->recordID, $_relation);
 
         if ($this->param->transform == static::TRANSFORM_BOOL) {
@@ -66,10 +66,10 @@ class Related extends SugarUtility {
     $continue = true;
 
     if (array_key_exists('records', $results)) {
-      $continue = call_user_func($this->param->lookupFn, $results['records'], $this->param->offset);
+      $continue = call_user_func($this->param->resultsFn, ['records' => $results['records'], 'offset' => $this->param->offset]);
     } else {
       // This means we have a single record
-      $continue = call_user_func($this->param->lookupFn, $results, $this->param->offset);
+      $continue = call_user_func($this->param->resultsFn, ['records' => $results, 'offset' => $this->param->offset]);
       return 0;
     }
 
