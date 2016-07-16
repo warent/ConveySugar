@@ -35,7 +35,7 @@ ConveySugar is available via Composer
 		public function searchContacts() {
 
 			// Instantiating a new Sugar Utility
-			// This one cycles through all instances of a Sugar module
+			// This one cycles through all records within a Sugar module
 			$serchUtil = new Search(['resultsFn' => function($Results, $offset) {
 				echo "Results from $offset";
 				foreach ($Results as $result) {
@@ -43,7 +43,7 @@ ConveySugar is available via Composer
 				}
 			});
 
-			// We execute our Sugar Utility on the module 'Contacts'
+			// We execute our Search Utility on the module 'Contacts'
 			$this->sugar->execute('Contacts', $searchUtil);
 		}
 	}
