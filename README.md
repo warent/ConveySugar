@@ -79,6 +79,7 @@ ConveySugar is available via Composer
 	* Related::TYPE_NORMAL
 	* Related::TYPE_NAKED
 	* Related::TYPE_BACK
+* number __(Integer)__
 * transform __(Related::Transform [static int])__
 	* Related::TRANSFORM_JSON
 	* Related::TRANSFORM_BOOL
@@ -99,6 +100,14 @@ ConveySugar is available via Composer
 		* offset (Integer)
 * offset __(Integer)__
 * limit __(Integer)__
+
+## 5. Extra features
+### resultFn
+* Returning `false` in a resultFn will stop/break the lookup
+
+### Related (Utility)
+* `transform` will return JSON (Assoc Array) by default. `TYPE_BOOL` will `return true` if any results are found, otherwise `return false`
+* `type` refers to the`SugarCRM` formatting of relational queries. There are three (unofficial) known ways for this to happen in the Sugar API, `NORMAL`, `BACK`, and `NAKED`: in a `NORMAL` type the query is `$module_$relation_$number`; in a `BACK` type the query is `$relation_$module_$number`; in a `NAKED` type the query is simply `$relation`. `NORMAL` is the default `type` and `1` is the default `number` as these are the most common configurations.
 
 ## Thank you
 * [SPinegar SugarCRM REST Client For SugarCRM 7](https://github.com/spinegar/sugarcrm7-api-wrapper-class)
